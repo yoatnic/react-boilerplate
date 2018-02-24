@@ -4,7 +4,7 @@ const initinalState = {
   messages: []
 };
 
-export function messagesReducer(state = initinalState, action) {
+export const messagesReducer = (state = initinalState, action) => {
   switch (action.type) {
     case POST_MESSAGE:
       return Object.assign({}, state, {
@@ -13,4 +13,4 @@ export function messagesReducer(state = initinalState, action) {
     default:
       return state;
   }
-}
+};

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Footer = function() {
+const Footer = () => {
   const style = {
     width: "100%",
     height: "20px",

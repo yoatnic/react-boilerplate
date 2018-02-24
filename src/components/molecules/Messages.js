@@ -1,5 +1,6 @@
 import React from "react";
 import Message from "../atom/Message";
+import PropTypes from "prop-types";
 
 const Messages = props => {
   const style = {
@@ -7,11 +8,18 @@ const Messages = props => {
   };
   return (
     <div style={style}>
-      {props.messages.map((msg, index) => (
-        <Message key={index} message={msg} />
-      ))}
+      {props.messages.map(msg => <Message key={msg.id} message={msg.body} />)}
     </div>
   );
+};
+
+Messages.propTypes = {
+  messages: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      body: PropTypes.string
+    })
+  ).isRequired
 };
 
 export default Messages;
