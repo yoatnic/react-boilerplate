@@ -1,27 +1,40 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const PostForm = props => {
-  let textInput = null;
+class PostForm extends React.Component {
+  constructor() {
+    super(...arguments);
 
-  function handleClick() {
-    if (!textInput.value) return;
-    props.onMessagePosted(textInput.value);
-    textInput.value = "";
+    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.state = {
+      text: ""
+    };
   }
 
-  return (
-    <div>
-      <input
-        type="text"
-        ref={input => {
-          textInput = input;
-        }}
-      />
-      <button onClick={handleClick}>post message</button>
-    </div>
-  );
-};
+  handleClick() {
+    if (!this.state.text) return;
+    this.props.onMessagePosted(this.state.text);
+    this.setState({ text: "" });
+  }
+
+  handleChange(e) {
+    this.setState({ text: e.target.value });
+  }
+
+  render() {
+    return (
+      <div>
+        <input
+          type="text"
+          value={this.state.text}
+          onChange={this.handleChange}
+        />
+        <button onClick={this.handleClick}>post message</button>
+      </div>
+    );
+  }
+}
 
 PostForm.propTypes = {
   onMessagePosted: PropTypes.func.isRequired
