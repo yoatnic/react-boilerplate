@@ -8,6 +8,8 @@ This is boilerplate for creating SPA using with React + Redux.
 
 https://nodejs.org/en/
 
+Required version >=6.11.5
+
 ### Install dependencies
 
 Installing depended modules of this project.
