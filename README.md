@@ -41,6 +41,16 @@ Type following commands on your terminal.
 npm test
 ```
 
+### Lint
+
+Type following commands on your terminal.
+
+```sh
+npm run lint
+```
+
+Lint target is `/src`
+
 ### build
 
 Type following commands on your terminal.
