@@ -1,17 +1,19 @@
+//@flow
+import { connect } from "react-redux";
 import AppRouter from "../../AppRouter";
 import { postMessage } from "../../actions/PostMessage";
-import { connect } from "react-redux";
+import type { State } from "../../reducers/MessagesReducer";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: State): State => {
   return {
     messages: state.messages
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  let messageId = 0;
+const mapDispatchToProps = (dispatch: Function) => {
+  let messageId: number = 0;
   return {
-    onMessagePosted(messageStr) {
+    onMessagePosted(messageStr: string): void {
       dispatch(
         postMessage({
           id: messageId++,

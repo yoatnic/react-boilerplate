@@ -1,15 +1,25 @@
+//@flow
 import { POST_MESSAGE } from "../actions/PostMessage";
+import type { Message, MessageAction } from "../actions/PostMessage";
 
-const initinalState = {
+export type State = {
+  messages: Array<Message>
+};
+
+const initinalState: State = {
   messages: []
 };
 
-export const messagesReducer = (state = initinalState, action) => {
+export const messagesReducer = (
+  state: State = initinalState,
+  action: MessageAction
+): State => {
   switch (action.type) {
   case POST_MESSAGE:
-    return Object.assign({}, state, {
+    const newState: State = Object.assign({}, state, {
       messages: [...state.messages, action.message]
     });
+    return newState;
   default:
     return state;
   }

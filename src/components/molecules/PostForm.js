@@ -1,12 +1,21 @@
+//@flow
 import React from "react";
 import PropTypes from "prop-types";
 
-class PostForm extends React.Component {
+type Props = {
+  onMessagePosted: Function
+};
+
+type State = {
+  text: string
+};
+
+class PostForm extends React.Component<Props, State> {
   constructor() {
     super(...arguments);
 
-    this.handleClick = this.handleClick.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    (this: any).handleClick = this.handleClick.bind(this);
+    (this: any).handleChange = this.handleChange.bind(this);
     this.state = {
       text: ""
     };
@@ -18,7 +27,7 @@ class PostForm extends React.Component {
     this.setState({ text: "" });
   }
 
-  handleChange(e) {
+  handleChange(e: SyntheticInputEvent<HTMLInputElement>) {
     this.setState({ text: e.target.value });
   }
 
@@ -35,9 +44,5 @@ class PostForm extends React.Component {
     );
   }
 }
-
-PostForm.propTypes = {
-  onMessagePosted: PropTypes.func.isRequired
-};
 
 export default PostForm;

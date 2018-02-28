@@ -1,8 +1,9 @@
+//@flow
 import React from "react";
 import Home from "./components/pages/Home";
 import { BrowserRouter, Route } from "react-router-dom";
 
-const AppRouter = props => {
+const AppRouter = (props: any) => {
   return (
     <BrowserRouter>
       <div>
