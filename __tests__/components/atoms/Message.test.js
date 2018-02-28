@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import Message from "components/atom/Message";
+import Message from "components/atoms/Message";
 
 configure({ adapter: new Adapter() });
 

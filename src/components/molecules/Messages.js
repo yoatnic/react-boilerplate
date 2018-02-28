@@ -1,5 +1,5 @@
 import React from "react";
-import Message from "../atom/Message";
+import Message from "../atoms/Message";
 import PropTypes from "prop-types";
 
 const Messages = props => {
