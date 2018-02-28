@@ -35,15 +35,11 @@ npm start
 
 ### Test
 
-Type following commands on your terminal.
-
 ```sh
 npm test
 ```
 
 ### Lint
-
-Type following commands on your terminal.
 
 ```sh
 npm run lint
@@ -51,9 +47,13 @@ npm run lint
 
 Lint target is `/src`
 
-### build
+### Type checking
 
-Type following commands on your terminal.
+```sh
+npm run flow
+```
+
+### build
 
 ```
 npm run build
