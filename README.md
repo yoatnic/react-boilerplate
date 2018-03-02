@@ -2,6 +2,18 @@
 
 This is boilerplate for creating SPA using with React + Redux.
 
+## Libs
+
+* React
+* React-Router
+* Redux
+* flow
+* Webpack4
+* Jest
+* babel
+* ESLint
+* prettier
+
 ## Getting start
 
 ### install Node.js
