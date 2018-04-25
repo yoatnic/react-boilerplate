@@ -17,7 +17,7 @@ export const messagesReducer = (
   switch (action.type) {
   case POST_MESSAGE:
     const newState: State = Object.assign({}, state, {
-      messages: [...state.messages, action.message]
+      messages: [...state.messages, action.payload.message]
     });
     return newState;
   default:

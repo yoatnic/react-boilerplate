@@ -8,9 +8,16 @@ export type Message = {
 
 export type MessageAction = {
   type: string,
-  message: Message
+  payload: {
+    message: Message
+  }
 };
 
 export const postMessage = (message: Message): MessageAction => {
-  return { type: POST_MESSAGE, message };
+  return {
+    type: POST_MESSAGE,
+    payload: {
+      message
+    }
+  };
 };
