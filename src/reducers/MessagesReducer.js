@@ -1,6 +1,6 @@
 //@flow
-import { POST_MESSAGE } from "../actions/PostMessage";
-import type { Message, MessageAction } from "../actions/PostMessage";
+import { POST_MESSAGE } from "../actions/PostMessageAction";
+import type { Message, MessageAction } from "../actions/PostMessageAction";
 
 export type State = {
   messages: Array<Message>

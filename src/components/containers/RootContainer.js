@@ -1,7 +1,7 @@
 //@flow
 import { connect } from "react-redux";
 import AppRouter from "../../AppRouter";
-import { postMessage } from "../../actions/PostMessage";
+import { postMessage } from "../../actions/PostMessageAction";
 import type { State } from "../../reducers/MessagesReducer";
 
 const mapStateToProps = (state: State): State => {
