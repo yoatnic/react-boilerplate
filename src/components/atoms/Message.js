@@ -1,17 +1,18 @@
 //@flow
 import React from "react";
-import PropTypes from "prop-types";
+import styled from "styled-components";
 
 type Props = {
   message: string
 };
 
+const MessageContent = styled.div`
+  width: "100%";
+  border-bottom: "1px solid";
+`;
+
 const Message = (props: Props) => {
-  const style = {
-    width: "100%",
-    borderBottom: "1px solid"
-  };
-  return <div style={style}>{props.message}</div>;
+  return <MessageContent>{props.message}</MessageContent>;
 };
 
 export default Message;

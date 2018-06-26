@@ -1,16 +1,18 @@
 //@flow
 import React from "react";
+import styled from "styled-components";
+
+const HeaderContent = styled.header`
+  width: 100%;
+  height: 40px;
+  background-color: #dddddd;
+`;
 
 const Header = () => {
-  const style = {
-    width: "100%",
-    height: "40px",
-    backgroundColor: "#DDDDDD"
-  };
   return (
-    <header style={style}>
+    <HeaderContent>
       <h1>header</h1>
-    </header>
+    </HeaderContent>
   );
 };
 

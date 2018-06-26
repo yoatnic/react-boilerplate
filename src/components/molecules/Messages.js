@@ -1,7 +1,7 @@
 //@flow
 import React from "react";
+import styled from "styled-components";
 import Message from "../atoms/Message";
-import PropTypes from "prop-types";
 
 type Props = {
   messages: Array<{
@@ -10,14 +10,15 @@ type Props = {
   }>
 };
 
+const MessagesContent = styled.div`
+  width: 100%;
+`;
+
 const Messages = (props: Props) => {
-  const style = {
-    width: "100%"
-  };
   return (
-    <div style={style}>
+    <MessagesContent>
       {props.messages.map(msg => <Message key={msg.id} message={msg.body} />)}
-    </div>
+    </MessagesContent>
   );
 };
 
