@@ -1,5 +1,5 @@
 import { messagesReducer } from "reducers/MessagesReducer";
-import { POST_MESSAGE } from "actions/PostMessage";
+import { POST_MESSAGE } from "actions/PostMessageAction";
 
 const initialState = { messages: [] };
 
