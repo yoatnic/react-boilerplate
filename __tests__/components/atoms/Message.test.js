@@ -1,12 +1,14 @@
 import React from "react";
-import { shallow, configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+import renderer from "react-test-renderer";
+import "jest-styled-components";
 import Message from "components/atoms/Message";
 
-configure({ adapter: new Adapter() });
-
 test("show message", () => {
-  const message = shallow(<Message message="test message" />);
+  const tree = renderer.create(<Message message="test message" />).toJSON();
+  expect(tree.children[0]).toEqual("test message");
+});
 
-  expect(message.text()).toEqual("test message");
+test("snap shot", () => {
+  const tree = renderer.create(<Message message="test message" />).toJSON();
+  expect(tree).toMatchSnapshot();
 });

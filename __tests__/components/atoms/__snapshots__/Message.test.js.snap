@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snap shot 1`] = `
+.c0 {
+  width: "100%";
+  border-bottom: "1px solid";
+}
+
+<div
+  className="c0"
+>
+  test message
+</div>
+`;

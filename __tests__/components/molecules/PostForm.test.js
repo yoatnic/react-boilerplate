@@ -1,4 +1,5 @@
 import React from "react";
+import renderer from "react-test-renderer";
 import { mount, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import sinon from "sinon";
@@ -18,4 +19,11 @@ test("click button => post message and clear input field", () => {
   expect(postFunc.calledWith("test message")).toEqual(true);
   expect(postFunc.calledOnce).toEqual(true);
   expect(form.find("input").props().value).toEqual("");
+});
+
+test("snap shot", () => {
+  const tree = renderer
+    .create(<PostForm onMessagePosted={() => {}} />)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
 });
