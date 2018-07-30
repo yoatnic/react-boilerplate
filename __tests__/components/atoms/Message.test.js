@@ -8,7 +8,7 @@ test("show message", () => {
   expect(tree.children[0]).toEqual("test message");
 });
 
-test("snap shot", () => {
+test("snapshot", () => {
   const tree = renderer.create(<Message message="test message" />).toJSON();
   expect(tree).toMatchSnapshot();
 });

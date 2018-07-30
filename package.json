@@ -18,6 +18,7 @@
     "start": "webpack-dev-server --hot --mode development",
     "build": "webpack --mode production",
     "test": "jest",
+    "snapshot-test": "jest --testNamePattern '.*snapshot$'",
     "update-snapshot": "jest --updateSnapshot",
     "lint": "eslint src",
     "flow": "flow"

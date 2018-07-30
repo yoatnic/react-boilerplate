@@ -21,7 +21,7 @@ test("click button => post message and clear input field", () => {
   expect(form.find("input").props().value).toEqual("");
 });
 
-test("snap shot", () => {
+test("snapshot", () => {
   const tree = renderer
     .create(<PostForm onMessagePosted={() => {}} />)
     .toJSON();
