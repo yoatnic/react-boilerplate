@@ -1,9 +1,9 @@
 //@flow
 import React from "react";
-import Header from "../molecules/Header";
+import Header from "../organisms/Header";
+import Footer from "../organisms/Footer";
 import Messages from "../molecules/Messages";
 import PostForm from "../molecules/PostForm";
-import Footer from "../molecules/Footer";
 
 const Fragment = (React: any).Fragment;
 const Home = (props: any) => {
