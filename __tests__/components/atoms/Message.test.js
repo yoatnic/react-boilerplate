@@ -1,3 +1,4 @@
+import assert from "assert";
 import React from "react";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
@@ -9,7 +10,7 @@ configure({ adapter: new Adapter() });
 
 test("show message", () => {
   const message = shallow(<Message message="test message" />);
-  expect(message.dive().text()).toEqual("test message");
+  assert(message.dive().text() === "test message");
 });
 
 test("snapshot", () => {

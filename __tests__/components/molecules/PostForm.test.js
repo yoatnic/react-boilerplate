@@ -1,3 +1,4 @@
+import assert from "assert";
 import React from "react";
 import renderer from "react-test-renderer";
 import { mount, configure } from "enzyme";
@@ -16,9 +17,9 @@ test("click button => post message and clear input field", () => {
   });
   form.find("button").simulate("click");
 
-  expect(postFunc.calledWith("test message")).toEqual(true);
-  expect(postFunc.calledOnce).toEqual(true);
-  expect(form.find("input").props().value).toEqual("");
+  assert(postFunc.calledWith("test message") === true);
+  assert(postFunc.calledOnce === true);
+  assert(form.find("input").props().value === "");
 });
 
 test("snapshot", () => {
