@@ -1,10 +1,12 @@
-import { messagesReducer } from "reducers/MessagesReducer";
-import { POST_MESSAGE } from "actions/PostMessageAction";
+import { messagesReducer } from "../../src/reducers/MessagesReducer";
+import { POST_MESSAGE } from "../../src/actions/PostMessageAction";
 
 const initialState = { messages: [] };
 
 test("initial state", () => {
-  const state = messagesReducer(undefined, {});
+  const state = messagesReducer(undefined, {
+    type: "initilalize"
+  });
 
   expect(state).toEqual(initialState);
 });

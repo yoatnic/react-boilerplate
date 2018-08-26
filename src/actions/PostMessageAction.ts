@@ -1,17 +1,16 @@
-//@flow
 export const POST_MESSAGE = "POST_MESSAGE";
 
-export type Message = {
-  id: number,
-  body: string
-};
+export interface Message {
+  id: number;
+  body: string;
+}
 
-export type MessageAction = {
-  type: string,
+export interface MessageAction {
+  type: string;
   payload: {
-    message: Message
-  }
-};
+    message: Message;
+  };
+}
 
 export const postMessage = (message: Message): MessageAction => {
   return {

@@ -1,10 +1,11 @@
-import assert from "assert";
-import React from "react";
-import renderer from "react-test-renderer";
+import * as assert from "assert";
+import * as React from "react";
+import * as renderer from "react-test-renderer";
 import "jest-styled-components";
 import { shallow, configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import Message from "components/atoms/Message";
+// HACK see: https://github.com/airbnb/enzyme/pull/1264
+const Adapter = require("enzyme-adapter-react-16");
+import Message from "../../../src/components/atoms/Message";
 
 configure({ adapter: new Adapter() });
 

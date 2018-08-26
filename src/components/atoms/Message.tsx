@@ -1,10 +1,9 @@
-//@flow
-import React from "react";
+import * as React from "react";
 import styled from "styled-components";
 
-type Props = {
-  message: string
-};
+interface Props {
+  message: string;
+}
 
 const MessageContent = styled.div`
   width: "100%";

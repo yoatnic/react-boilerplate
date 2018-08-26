@@ -1,14 +1,10 @@
-//@flow
-import React from "react";
+import * as React from "react";
 import styled from "styled-components";
 import Message from "../atoms/Message";
 
-type Props = {
-  messages: Array<{
-    id: number,
-    body: string
-  }>
-};
+interface Props {
+  messages: Array<{ id: number; body: string }>;
+}
 
 const MessagesContent = styled.div`
   width: 100%;
@@ -17,7 +13,9 @@ const MessagesContent = styled.div`
 const Messages = (props: Props) => {
   return (
     <MessagesContent>
-      {props.messages.map(msg => <Message key={msg.id} message={msg.body} />)}
+      {props.messages.map(msg => (
+        <Message key={msg.id} message={msg.body} />
+      ))}
     </MessagesContent>
   );
 };

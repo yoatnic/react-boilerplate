@@ -1,20 +1,19 @@
-//@flow
-import React from "react";
+import * as React from "react";
 
-type Props = {
-  onMessagePosted: Function
-};
+interface Props {
+  onMessagePosted: Function;
+}
 
-type State = {
-  text: string
-};
+interface State {
+  text: string;
+}
 
 class PostForm extends React.Component<Props, State> {
-  constructor() {
-    super(...arguments);
+  constructor(props: Props) {
+    super(props);
 
-    (this: any).handleClick = this.handleClick.bind(this);
-    (this: any).handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.state = {
       text: ""
     };
@@ -26,7 +25,7 @@ class PostForm extends React.Component<Props, State> {
     this.setState({ text: "" });
   }
 
-  handleChange(e: SyntheticInputEvent<HTMLInputElement>) {
+  handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     this.setState({ text: e.target.value });
   }
 

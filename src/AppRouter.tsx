@@ -1,7 +1,6 @@
-//@flow
-import React from "react";
-import Home from "./components/pages/Home";
+import * as React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+import Home from "./components/pages/Home";
 
 const AppRouter = (props: any) => {
   return (

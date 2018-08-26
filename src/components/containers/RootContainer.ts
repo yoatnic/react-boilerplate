@@ -1,8 +1,7 @@
-//@flow
 import { connect } from "react-redux";
 import AppRouter from "../../AppRouter";
 import { postMessage } from "../../actions/PostMessageAction";
-import type { State } from "../../reducers/MessagesReducer";
+import { State } from "../../reducers/MessagesReducer";
 
 const mapStateToProps = (state: State): State => {
   return {
@@ -24,5 +23,8 @@ const mapDispatchToProps = (dispatch: Function) => {
   };
 };
 
-const RootContainer = connect(mapStateToProps, mapDispatchToProps)(AppRouter);
+const RootContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AppRouter);
 export default RootContainer;

@@ -1,15 +1,16 @@
-import assert from "assert";
-import React from "react";
-import renderer from "react-test-renderer";
+import * as assert from "assert";
+import { spy } from "sinon";
+import * as React from "react";
+import * as renderer from "react-test-renderer";
 import { mount, configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import sinon from "sinon";
-import PostForm from "components/molecules/PostForm";
+// HACK see: https://github.com/airbnb/enzyme/pull/1264
+const Adapter = require("enzyme-adapter-react-16");
+import PostForm from "../../../src/components/molecules/PostForm";
 
 configure({ adapter: new Adapter() });
 
 test("click button => post message and clear input field", () => {
-  const postFunc = sinon.spy();
+  const postFunc = spy();
   const form = mount(<PostForm onMessagePosted={postFunc} />);
 
   form.find("input").simulate("change", {
