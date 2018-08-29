@@ -1,4 +1,3 @@
-import * as assert from "assert";
 import { spy } from "sinon";
 import * as React from "react";
 import * as renderer from "react-test-renderer";
@@ -18,14 +17,15 @@ test("click button => post message and clear input field", () => {
   });
   form.find("button").simulate("click");
 
-  assert(postFunc.calledWith("test message") === true);
-  assert(postFunc.calledOnce === true);
-  assert(form.find("input").props().value === "");
+  expect(postFunc.calledWith("test message")).toEqual(true);
+  expect(postFunc.calledOnce).toEqual(true);
+  expect(form.find("input").props().value).toEqual("");
 });
 
 test("snapshot", () => {
+  const callback = () => {};
   const tree = renderer
-    .create(<PostForm onMessagePosted={() => {}} />)
+    .create(<PostForm onMessagePosted={callback} />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
