@@ -19,7 +19,8 @@
     "snapshot-test": "jest --testNamePattern '.*snapshot$'",
     "update-snapshot": "jest --updateSnapshot",
     "lint": "tslint 'src/**/*.ts{,x}'",
-    "tslint-check": "tslint-config-prettier-check ./tslint.json"
+    "tslint-check": "tslint-config-prettier-check ./tslint.json",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/enzyme-adapter-react-16": "^1.0.3",
