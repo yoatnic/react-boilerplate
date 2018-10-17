@@ -1,7 +1,7 @@
 import { messagesReducer } from "../../src/reducers/MessagesReducer";
 import { POST_MESSAGE } from "../../src/actions/PostMessageAction";
 
-const initialState = { messages: [] };
+const initialState: any = { messages: [] };
 
 test("initial state", () => {
   const state = messagesReducer(undefined, {
