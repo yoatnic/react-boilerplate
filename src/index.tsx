@@ -1,13 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { store } from "./Store";
-import RootContainer from "./components/containers/RootContainer";
+import AppRouter from "./AppRouter";
 import "./styles/index.css";
 
-ReactDOM.render(
-  <Provider store={store}>
-    <RootContainer />
-  </Provider>,
-  document.getElementsByClassName("main")[0]
-);
+ReactDOM.render(<AppRouter />, document.getElementsByClassName("main")[0]);

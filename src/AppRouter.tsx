@@ -1,10 +1,9 @@
 import * as React from "react";
-import { BrowserRouter, Route, RouteComponentProps } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./components/pages/Home";
-import { StaticContext } from "react-router";
 
-const AppRouter = (props: any) => {
-  const renderHome = (): any => <Home {...props} />;
+const AppRouter = () => {
+  const renderHome = (): any => <Home />;
   return (
     <BrowserRouter>
       <div>
